@@ -5,10 +5,9 @@ import {ButtonOpacity} from '../../../common/AppButton';
 import NavigationProps from '../../../types/navigation';
 const Authentication: React.FC<NavigationProps> = props => {
   return (
-    <AppView>
-      <AppText text="sdfsdf" />
+    <AppView style={{marginTop: 30}}>
       <ButtonOpacity
-        text="Go to Tab Main"
+        text="Go to home"
         onPress={() => props.navigation.push('main')}
       />
     </AppView>

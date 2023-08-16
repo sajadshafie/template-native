@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
-import {Color} from '../palette';
+import {Color} from '../constant';
 
 type Props = {
   text?: string;
@@ -14,7 +14,7 @@ const AppText: React.FC<Props> = props => {
 const style = StyleSheet.create({
   text: {
     color: Color.text_color,
-    fontFamily: '',
+    fontFamily: 'IRANSansXBlack',
   },
 });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet, TouchableOpacity, View} from 'react-native';
 import AppText from './AppText';
-import {Color} from '../palette';
+import {Color} from '../constant';
 
 type AppButton = {
   text?: string;

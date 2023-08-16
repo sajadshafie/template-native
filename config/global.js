@@ -1,16 +1,9 @@
 import axios from 'axios';
-import AsyncStorage, {
-  useAsyncStorage,
-} from '@react-native-async-storage/async-storage';
-import {useContext} from 'react';
-import {context} from '../context/Context';
-const {setItem, getItem, removeItem} = useAsyncStorage('usertoken');
+import {useAsyncStorage} from '@react-native-async-storage/async-storage';
+
+const {getItem} = useAsyncStorage('usertoken');
 
 const config = {
-  myToken: () => {
-    const {state, setState} = useContext(context);
-    return state.token;
-  },
   udata: getItem((err, item) => {
     return item;
   }),

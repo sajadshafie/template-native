@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 import AppView from '../../common/AppView';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {context} from '../../App';
-import {Color} from '../../palette';
+import {Color} from '../../constant';
 
 const Splash: React.FC = () => {
   const {state, setState} = useContext<any>(context);

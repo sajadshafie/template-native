@@ -1,9 +1,9 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Page1 from './home';
-import Page2 from './profile';
-import {Color} from '../../palette';
+import Home from './home';
+import Profile from './profile';
+import {Color} from '../../constant';
 import {StyleSheet} from 'react-native';
 const Tab = createBottomTabNavigator();
 
@@ -48,8 +48,8 @@ const Main: React.FC = () => {
         tabBarActiveTintColor: 'white',
         tabBarInactiveTintColor: 'gray',
       })}>
-      <Tab.Screen name="home" component={Page1} />
-      <Tab.Screen name="profile" component={Page2} />
+      <Tab.Screen name="home" component={Home} />
+      <Tab.Screen name="profile" component={Profile} />
     </Tab.Navigator>
   );
 };
