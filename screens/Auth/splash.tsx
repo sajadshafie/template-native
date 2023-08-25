@@ -1,12 +1,14 @@
-import React, {useContext, useEffect} from 'react';
-import {StyleSheet} from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import { StyleSheet } from 'react-native';
 import AppView from '../../common/AppView';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import {context} from '../../App';
-import {Color} from '../../constant';
+
+import { context } from '../../App';
+import { Color } from '../../constant';
+import AppImage from '../../common/AppImage';
+import AppText from '../../common/AppText';
 
 const Splash: React.FC = () => {
-  const {state, setState} = useContext<any>(context);
+  const { state, setState } = useContext<any>(context);
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,14 +21,19 @@ const Splash: React.FC = () => {
 
   return (
     <AppView style={style.container}>
-      <AntDesign
-        name="earth"
-        size={50}
-        color="white"
+      <AppImage
+        source={require('../../assets/images/per.png')}
         style={{
-          textShadowColor: '#faf9f9',
-          textShadowOffset: {width: 1, height: 1},
-          textShadowRadius: 3,
+          height: 400,
+          width: "100%"
+        }}
+      />
+      <AppText
+        is_bold
+        text='ماهر'
+        style={{
+          fontSize: 50
+          , color: "white"
         }}
       />
     </AppView>

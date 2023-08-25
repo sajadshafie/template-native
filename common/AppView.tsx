@@ -13,7 +13,7 @@ const AppView: React.FC<Props> = props => {
 const style = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    flex: 1,
+    
   },
 });
 

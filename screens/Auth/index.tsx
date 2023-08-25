@@ -1,7 +1,8 @@
 import React from 'react';
 import Main from '../Main';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Authentication from './authentication';
+import Confirm from './authentication/confirm';
 
 const Slack = createNativeStackNavigator();
 
@@ -13,6 +14,8 @@ const Auth: React.FC = () => {
         animation: 'slide_from_left',
       }}>
       <Slack.Screen component={Authentication} name="auth" />
+      <Slack.Screen
+        component={Confirm} name='confirm' />
       <Slack.Screen name="main" component={Main} />
     </Slack.Navigator>
   );

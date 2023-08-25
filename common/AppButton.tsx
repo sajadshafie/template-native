@@ -1,7 +1,7 @@
 import React from 'react';
-import {Pressable, StyleSheet, TouchableOpacity, View} from 'react-native';
+import { Pressable, StyleSheet, TouchableOpacity, View, ActivityIndicator } from 'react-native';
 import AppText from './AppText';
-import {Color} from '../constant';
+import { Color } from '../constant';
 
 type AppButton = {
   text?: string;
@@ -9,15 +9,19 @@ type AppButton = {
   styleButton?: object;
   styleView?: object;
   styleText?: object;
+  isBoldText?: boolean
+  loading?: boolean
 };
 
 export const ButtonOpacity: React.FC<AppButton> = props => {
   return (
     <TouchableOpacity
       onPress={props.onPress}
-      style={[style.container_button, props.styleButton]}>
+
+      style={[{ ...style.container_button, backgroundColor: props.loading ? Color.main_bg100 : Color.main_bg }, props.styleButton]}>
       <View style={[style.view_button, props.styleView]}>
-        <AppText text={props.text} style={[style.text, props.styleText]} />
+        {props.loading && <ActivityIndicator color={Color.shadow_icon} style={{ marginRight: 10 }} />}
+
       </View>
     </TouchableOpacity>
   );
@@ -27,9 +31,9 @@ export const ButtonPresable: React.FC<AppButton> = props => {
   return (
     <Pressable
       onPress={props.onPress}
-      style={[style.container_button, props.styleButton]}>
+      style={[{ ...style.container_button, backgroundColor: props.loading ? Color.main_bg100 : Color.main_bg, }, props.styleButton]}>
       <View style={[style.view_button, props.styleView]}>
-        <AppText text={props.text} style={[style.text, props.styleText]} />
+        <AppText is_bold={props.isBoldText} style={[style.text, props.styleText]} >{props.text}</AppText>
       </View>
     </Pressable>
   );
@@ -37,9 +41,11 @@ export const ButtonPresable: React.FC<AppButton> = props => {
 
 const style = StyleSheet.create({
   container_button: {
-    backgroundColor: Color.main_bg,
+
     paddingHorizontal: 7,
     paddingVertical: 8,
+    borderRadius: 12,
+    width: "100%"
   },
   text: {
     color: 'white',
