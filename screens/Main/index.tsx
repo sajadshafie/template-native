@@ -5,6 +5,9 @@ import Home from './home';
 import Profile from './profile';
 import {Color} from '../../constant';
 import {StyleSheet} from 'react-native';
+import TabRender from '../../components/main/TabRender';
+import {TabItems} from '../../components/main/TabRender/items';
+import {tabType} from '../../types';
 const Tab = createBottomTabNavigator();
 
 const sizeIcon = 25;
@@ -14,55 +17,47 @@ const Main: React.FC = () => {
     <Tab.Navigator
       screenOptions={({route}) => ({
         headerShown: false,
+        tabBarShowLabel: false,
+
         tabBarStyle: {
           backgroundColor: Color.main_bg,
-          height: 55,
+          height: 70,
           paddingBottom: 5,
+          marginHorizontal: 10,
+          marginBottom: 10,
+          borderRadius: 20,
         },
         tabBarIcon: ({focused, color, size}) => {
-          let iconName;
+          let iconName = TabItems.map((v: tabType, i: number) => {
+            if (v.tabName == route.name) {
+              return (
+                <React.Fragment key={i}>
+                  <TabRender
+                    focused={focused}
+                    text={v.text}
+                    iconNameActive={v.iconNameActive}
+                    iconNameDeactive={v.iconNameDeactive}
+                  />
+                </React.Fragment>
+              );
+            }
+          });
 
-          if (route.name === 'home') {
-            iconName = (
-              <Ionicons
-                name={focused ? 'home' : 'home-outline'}
-                size={sizeIcon}
-                color={'white'}
-                style={focused ? style.icon_shadow : style.icon_default}
-              />
-            );
-          } else if (route.name === 'profile') {
-            iconName = (
-              <Ionicons
-                name={focused ? 'person' : 'person-outline'}
-                size={sizeIcon}
-                color={'white'}
-                style={focused ? style.icon_shadow : style.icon_default}
-              />
-            );
-          }
-
-          // You can return any component that you like here!
           return iconName;
         },
         tabBarActiveTintColor: 'white',
         tabBarInactiveTintColor: 'gray',
       })}>
-      <Tab.Screen name="home" component={Home} />
-      <Tab.Screen name="profile" component={Profile} />
+      {TabItems.map((v: tabType, i: number) => {
+        return (
+          <React.Fragment key={i}>
+            <Tab.Screen name={v.tabName} component={v.component} />
+          </React.Fragment>
+        );
+      })}
+      {/* <Tab.Screen name="profile" component={Profile} /> */}
     </Tab.Navigator>
   );
 };
-
-const style = StyleSheet.create({
-  icon_shadow: {
-    textShadowColor: Color.shadow_icon,
-    textShadowOffset: {width: 1, height: 1},
-    textShadowRadius: 2.5,
-  },
-  icon_default: {
-    color: 'white',
-  },
-});
 
 export default Main;

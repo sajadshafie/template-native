@@ -2,6 +2,14 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/fanum.ttf",
+      "sha1": "3a322f450b5f8453c9f40d31ce3eaa96501b96c0"
+    },
+    {
+      "path": "assets/fonts/IRANSansFaNum.ttf",
+      "sha1": "b0822cf45c84aeb67519877bac099ef729c98462"
+    },
+    {
       "path": "assets/fonts/IRANSansXBlack.ttf",
       "sha1": "e63ab9e8bfac4dfd9a2cb57c112fd80eb3bf01e1"
     },

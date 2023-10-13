@@ -13,7 +13,6 @@ export const style = StyleSheet.create({
     alignItems: 'center',
     marginTop: 80,
     justifyContent: 'space-between',
-    // backgroundColor: "red",
   },
   logo: {
     width: 100,

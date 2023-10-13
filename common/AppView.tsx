@@ -1,19 +1,22 @@
 import React, {ReactNode} from 'react';
-import {View, StyleSheet} from 'react-native';
-
+import {View, StyleSheet, ViewStyle, StyleProp} from 'react-native';
+import globals from '../globals';
 type Props = {
-  style?: object;
+  style?: StyleProp<ViewStyle>;
   children?: ReactNode;
 };
 
 const AppView: React.FC<Props> = props => {
-  return <View style={[style.container, props.style]}>{props.children}</View>;
+  return (
+    <View style={globals.combineStyleHandler(style.container, props.style)}>
+      {props.children}
+    </View>
+  );
 };
 
 const style = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    
   },
 });
 

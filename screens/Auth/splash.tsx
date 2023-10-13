@@ -1,14 +1,14 @@
-import React, { useContext, useEffect } from 'react';
-import { StyleSheet } from 'react-native';
+import React, {useContext, useEffect} from 'react';
+import {StyleSheet} from 'react-native';
 import AppView from '../../common/AppView';
 
-import { context } from '../../App';
-import { Color } from '../../constant';
+import {context} from '../../App';
+import {Color} from '../../constant';
 import AppImage from '../../common/AppImage';
 import AppText from '../../common/AppText';
 
 const Splash: React.FC = () => {
-  const { state, setState } = useContext<any>(context);
+  const {state, setState} = useContext<any>(context);
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,17 +25,17 @@ const Splash: React.FC = () => {
         source={require('../../assets/images/per.png')}
         style={{
           height: 400,
-          width: "100%"
+          width: '100%',
         }}
       />
       <AppText
         is_bold
-        text='ماهر'
         style={{
-          fontSize: 50
-          , color: "white"
-        }}
-      />
+          fontSize: 50,
+          color: Color.yellow_main,
+        }}>
+        ماهر
+      </AppText>
     </AppView>
   );
 };

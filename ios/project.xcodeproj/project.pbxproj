@@ -19,6 +19,8 @@
 		873105757A504801AA9AE996 /* IRANSansXBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3396FE5CF14047188B7FF48F /* IRANSansXBold.ttf */; };
 		6F36317429744F1AB4E9D7B7 /* IRANSansXMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDF9591A18184B0495AF6A75 /* IRANSansXMedium.ttf */; };
 		51DF56BABE624EEC91C6B425 /* IRANSansXRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFD43B73AE8842B58C2564CC /* IRANSansXRegular.ttf */; };
+		6BCD92CE7E34461BB00089C1 /* fanum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 702240F0713648A28AB7A541 /* fanum.ttf */; };
+		E62A4567D80740699BB2BFD9 /* IRANSansFaNum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D34C67E976B498DA8190B2A /* IRANSansFaNum.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		3396FE5CF14047188B7FF48F /* IRANSansXBold.ttf */ = {isa = PBXFileReference; name = "IRANSansXBold.ttf"; path = "../assets/fonts/IRANSansXBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DDF9591A18184B0495AF6A75 /* IRANSansXMedium.ttf */ = {isa = PBXFileReference; name = "IRANSansXMedium.ttf"; path = "../assets/fonts/IRANSansXMedium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		CFD43B73AE8842B58C2564CC /* IRANSansXRegular.ttf */ = {isa = PBXFileReference; name = "IRANSansXRegular.ttf"; path = "../assets/fonts/IRANSansXRegular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		702240F0713648A28AB7A541 /* fanum.ttf */ = {isa = PBXFileReference; name = "fanum.ttf"; path = "../assets/fonts/fanum.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8D34C67E976B498DA8190B2A /* IRANSansFaNum.ttf */ = {isa = PBXFileReference; name = "IRANSansFaNum.ttf"; path = "../assets/fonts/IRANSansFaNum.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 				3396FE5CF14047188B7FF48F /* IRANSansXBold.ttf */,
 				DDF9591A18184B0495AF6A75 /* IRANSansXMedium.ttf */,
 				CFD43B73AE8842B58C2564CC /* IRANSansXRegular.ttf */,
+				702240F0713648A28AB7A541 /* fanum.ttf */,
+				8D34C67E976B498DA8190B2A /* IRANSansFaNum.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 				873105757A504801AA9AE996 /* IRANSansXBold.ttf in Resources */,
 				6F36317429744F1AB4E9D7B7 /* IRANSansXMedium.ttf in Resources */,
 				51DF56BABE624EEC91C6B425 /* IRANSansXRegular.ttf in Resources */,
+				6BCD92CE7E34461BB00089C1 /* fanum.ttf in Resources */,
+				E62A4567D80740699BB2BFD9 /* IRANSansFaNum.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

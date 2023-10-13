@@ -1,39 +1,34 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { Color } from '../constant';
+import {Text, StyleProp, TextStyle} from 'react-native';
+import {Vartiants} from './variants';
+import {VariantTypes} from '../types/global';
 
 type Props = {
-  children?: string;
-  style?: object;
-  is_bold?: boolean,
-  variant?: string
-
+  children: React.ReactNode;
+  style: StyleProp<TextStyle>;
+  is_bold: boolean;
+  variant: VariantTypes['variant'];
 };
 
-const AppText: React.FC<Props> = props => {
+const AppText: React.FC<Partial<Props>> = props => {
   const renderVariant = () => {
+    const res = Vartiants.find(item => item.type == props.variant);
+    return res;
+  };
 
-
-    let res
-    if (props.variant == 'h1') {
-      res = 38
-    } else if (props.variant == 'h2') {
-      res = 32
-    } else if (props.variant == 'h3') {
-      res = 28
-    } else if (props.variant == 'h4') {
-      res = 22
-    } else if (props.variant == 'h5') {
-      res = 16
-    } else if (props.variant == 'h2') {
-      res = 12
-    }
-    return res
-  }
-
-  return <Text style={[{ color: props.variant == 'sub' ? '#a5a5a5' : props.variant == 'error' ? '#e63946' : Color.text_color, fontFamily: props.is_bold ? 'IRANSansXBold' : 'IRANSansXRegular', fontSize: renderVariant() }, props.style]}>{props.children}</Text>;
+  return (
+    <Text
+      style={[
+        {
+          color: renderVariant()?.color,
+          fontFamily: props.is_bold ? 'IRANSansXBold' : 'IRANSansFaNum',
+          fontSize: renderVariant()?.size,
+        },
+        props.style,
+      ]}>
+      {props.children}
+    </Text>
+  );
 };
-
-
 
 export default AppText;
