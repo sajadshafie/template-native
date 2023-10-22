@@ -15,6 +15,7 @@ const CardRender: React.FC = () => {
     return (
       <React.Fragment key={index}>
         <Card
+          last_index={index == ItemRender.length - 1}
           ttile={item.ttile}
           image={item.image}
           description={item.description}
@@ -25,7 +26,7 @@ const CardRender: React.FC = () => {
     );
   };
   return (
-    <AppView style={{height: 300, marginTop: 20, marginRight: 16}}>
+    <AppView style={{height: 360, marginTop: 20}}>
       <AppFlatList
         horizontal
         data={ItemRender}

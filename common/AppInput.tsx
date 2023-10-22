@@ -39,6 +39,7 @@ const AppInput: React.ForwardRefRenderFunction<TextInput, AppProps> = (
         {
           ...styles.input,
           borderColor: isFocus ? Color.yellow_main : Color.main_bg,
+          borderWidth: isFocus ? 2 : 1,
         },
         props.style,
       ]}
@@ -58,7 +59,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 12,
     height: 45,
-    borderWidth: 1,
 
     width: '100%',
     paddingHorizontal: 10,

@@ -13,6 +13,7 @@ import AppText from './AppText';
 import {Color} from '../constant';
 import {VariantTypes} from '../types/global';
 import globals from '../globals';
+
 type AppButton = {
   text?: string;
   onPress?: () => void;
@@ -22,6 +23,21 @@ type AppButton = {
   isBoldText?: boolean;
   loading?: boolean;
   textVariant?: VariantTypes['variant'];
+  variant: 'outlined' | 'contained';
+};
+
+const backgroundColorHandler = (
+  variant: 'outlined' | 'contained',
+  colorLoading: string,
+  colorMain: string,
+  loading: boolean | undefined,
+) => {
+  let res = {
+    main: variant == 'contained' ? colorMain : 'transparent',
+    loading: variant == 'contained' ? colorLoading : 'transparent',
+  };
+  const reslut = loading ? res.loading : res.main;
+  return reslut;
 };
 
 export const ButtonOpacity: React.FC<AppButton> = props => {
@@ -30,8 +46,13 @@ export const ButtonOpacity: React.FC<AppButton> = props => {
       onPress={props.onPress}
       style={[
         {
-          ...style.container_button,
-          backgroundColor: props.loading ? Color.main_bg100 : Color.main_bg,
+          ...style[props.variant],
+          backgroundColor: backgroundColorHandler(
+            props.variant,
+            Color.main_bg100,
+            Color.main_bg,
+            props.loading,
+          ),
         },
         props.styleButton,
       ]}>
@@ -45,7 +66,10 @@ export const ButtonOpacity: React.FC<AppButton> = props => {
         <AppText
           variant={props.textVariant}
           is_bold={props.isBoldText}
-          style={globals.combineStyleHandler(style.text, props.styleText)}>
+          style={globals.combineStyleHandler(
+            {color: props.variant == 'contained' ? 'white' : Color.main_bg},
+            props.styleText,
+          )}>
           {props.text}
         </AppText>
       </View>
@@ -59,8 +83,13 @@ export const ButtonPresable: React.FC<AppButton> = props => {
       onPress={props.onPress}
       style={[
         {
-          ...style.container_button,
-          backgroundColor: props.loading ? Color.main_bg100 : Color.main_bg,
+          ...style[props.variant],
+          backgroundColor: backgroundColorHandler(
+            props.variant,
+            Color.main_bg100,
+            Color.main_bg,
+            props.loading,
+          ),
         },
         props.styleButton,
       ]}>
@@ -68,7 +97,10 @@ export const ButtonPresable: React.FC<AppButton> = props => {
         <AppText
           variant={props.textVariant}
           is_bold={props.isBoldText}
-          style={globals.combineStyleHandler(style.text, props.styleText)}>
+          style={globals.combineStyleHandler(
+            {color: props.variant == 'contained' ? 'white' : Color.main_bg},
+            props.styleText,
+          )}>
           {props.text}
         </AppText>
       </View>
@@ -77,11 +109,19 @@ export const ButtonPresable: React.FC<AppButton> = props => {
 };
 
 const style = StyleSheet.create({
-  container_button: {
+  contained: {
     paddingHorizontal: 7,
     paddingVertical: 8,
     borderRadius: 12,
     width: '100%',
+  },
+  outlined: {
+    paddingHorizontal: 7,
+    paddingVertical: 8,
+    borderRadius: 12,
+    width: '100%',
+    borderColor: Color.main_bg,
+    borderWidth: 1.2,
   },
   text: {
     color: 'white',

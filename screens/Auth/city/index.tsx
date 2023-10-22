@@ -19,7 +19,6 @@ const City: React.FC<NavigationProps> = props => {
     if (value.length >= 1) {
       setCityData((state: propsType[]) => {
         return state.filter((v: propsType, i: number) => {
-          console.log(v.title.startsWith(value));
           return v.title.startsWith(value) && v;
         });
       });
@@ -32,7 +31,6 @@ const City: React.FC<NavigationProps> = props => {
   };
 
   const onPressCity = () => {
-    console.log('first');
     props.navigation.navigate('main');
   };
 

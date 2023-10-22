@@ -8,10 +8,12 @@ import {GlobalStyle} from '../../globals/style';
 import StarRating from 'react-native-star-rating-widget';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Color} from '../../constant';
+import {ButtonOpacity} from '../../common/AppButton';
 const Card: React.FC<Partial<itemRenderCardTypes>> = props => {
   const onChangeRate = () => {};
   return (
-    <AppView style={style.container}>
+    <AppView
+      style={{...style.container, marginRight: props.last_index ? 8 : 0}}>
       <AppImage source={props.image} style={style.image} />
       <AppView style={GlobalStyle.p_1}>
         <AppText variant="caption_main" is_bold>
@@ -30,7 +32,7 @@ const Card: React.FC<Partial<itemRenderCardTypes>> = props => {
           />
         </AppView>
         <AppView style={{flexDirection: 'row', alignItems: 'center'}}>
-          <AppText variant="caption_main">تعداد لایک توسط کاربران</AppText>
+          <AppText variant="caption_main">پسندیده شده</AppText>
           <AppView style={style.container_like}>
             <AntDesign name="heart" color={'red'} />
             <AppText variant="h6" style={GlobalStyle.ml_1}>
@@ -38,6 +40,12 @@ const Card: React.FC<Partial<itemRenderCardTypes>> = props => {
             </AppText>
           </AppView>
         </AppView>
+        <ButtonOpacity
+          styleButton={{marginTop: 10}}
+          text="مشاهده جزییات"
+          variant="outlined"
+          textVariant="h6"
+        />
       </AppView>
     </AppView>
   );
@@ -57,7 +65,7 @@ const style = StyleSheet.create({
     // shadowOpacity: 0.18,
     // shadowRadius: 1.0,
 
-    marginLeft: 16,
+    marginLeft: 8,
   },
   image: {
     objectFit: 'cover',

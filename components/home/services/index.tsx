@@ -16,6 +16,9 @@ const Services: React.FC = () => {
         is_bold>
         خدمات
       </AppText>
+      <AppView style={style.circle1} />
+      <AppView style={style.circle2} />
+      <AppView style={style.circle3} />
       <View style={style.container_services}>
         {ServicesItems.map((v: servicesType, i: number) => {
           return (
@@ -23,9 +26,11 @@ const Services: React.FC = () => {
               <MaterialCommunityIcons
                 name={v.iconName}
                 size={30}
-                color={Color.main_bg}
+                color={'white'}
               />
-              <AppText variant="caption_main" style={{textAlign: 'center'}}>
+              <AppText
+                variant="caption_main"
+                style={{textAlign: 'center', color: 'white'}}>
                 {v.label}
               </AppText>
             </AppView>
@@ -38,7 +43,8 @@ const Services: React.FC = () => {
 
 const style = StyleSheet.create({
   container_box: {
-    backgroundColor: Color.light_box,
+    position: 'relative',
+    backgroundColor: 'white',
   },
   container_services: {
     display: 'flex',
@@ -53,6 +59,34 @@ const style = StyleSheet.create({
     width: '30%',
     marginBottom: 16,
     padding: 8,
+    backgroundColor: Color.main_bg,
+  },
+  circle1: {
+    position: 'absolute',
+    width: 40,
+    height: 40,
+    right: 10,
+    top: 150,
+    borderRadius: 100,
+    backgroundColor: '#fbc4ab',
+  },
+  circle2: {
+    position: 'absolute',
+    width: 65,
+    height: 65,
+    left: 10,
+    top: 20,
+    borderRadius: 100,
+    backgroundColor: '#fbc4ab',
+  },
+  circle3: {
+    position: 'absolute',
+    width: 30,
+    height: 30,
+    left: 150,
+    bottom: 10,
+    borderRadius: 100,
+    backgroundColor: '#fbc4ab',
   },
 });
 

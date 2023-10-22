@@ -44,7 +44,7 @@ const Confirm = (props: NavigationProps): JSX.Element => {
     },
   ]);
   Keyboard.addListener('keyboardWillHide', () => {
-    console.log('first');
+    // console.log('first');
   });
   const [counter, setCounter] = useState<number>(60);
 
@@ -124,6 +124,7 @@ const Confirm = (props: NavigationProps): JSX.Element => {
       {counter == 0 ? (
         <AppView style={{marginVertical: 20}}>
           <ButtonPresable
+            variant="contained"
             onPress={() => setCounter(60)}
             styleButton={{
               backgroundColor: 'white',

@@ -10,4 +10,7 @@ export const Color = {
   light_gray20: '#ced4da',
   light_gray30: '#adb5bd',
   light_box: 'rgba(254, 250, 224,0.7)',
+  box_red: '#e63946',
+  box_yellow: '#ffbe0b',
+  transparent: 'transparent',
 };

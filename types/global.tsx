@@ -1,3 +1,4 @@
+import React from 'react';
 export interface VariantTypes {
   variant:
     | 'h1'
@@ -17,4 +18,9 @@ export interface VariantTypes {
 export type imageCardTypes = {
   title: string;
   description: string;
+  circleColor: string;
+  themeColor: string;
+  icon: React.ReactNode;
+  buttonVariant: 'outlined' | 'contained';
+  darkText: boolean;
 };

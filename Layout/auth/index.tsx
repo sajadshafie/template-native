@@ -26,6 +26,7 @@ const AuthLayout: React.FC<Partial<authLayoutTypes>> = props => {
       </AppText>
       {props.children}
       <ButtonOpacity
+        variant="contained"
         loading={props.loading}
         text={props.textbutton}
         onPress={props.onSubmit}

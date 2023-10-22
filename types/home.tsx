@@ -11,4 +11,5 @@ export type itemRenderCardTypes = {
   description: string;
   rate: number;
   likes: number;
+  last_index: boolean;
 };
