@@ -17,7 +17,7 @@ const TabRender: React.FC<Partial<tabRenderType>> = props => {
       <Ionicons
         name={props.focused ? props.iconNameActive : props.iconNameDeactive}
         size={sizeIcon}
-        color={'white'}
+        color={Color.light_white}
         style={props.focused ? style.icon_shadow : style.icon_default}
       />
       <AppText

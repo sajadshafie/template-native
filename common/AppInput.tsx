@@ -56,7 +56,7 @@ const AppInput: React.ForwardRefRenderFunction<TextInput, AppProps> = (
 
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: 'white',
+    backgroundColor: Color.light_white,
     borderRadius: 12,
     height: 45,
 

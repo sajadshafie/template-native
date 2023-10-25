@@ -9,7 +9,7 @@ import StarRating from 'react-native-star-rating-widget';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Color} from '../../constant';
 import {ButtonOpacity} from '../../common/AppButton';
-const Card: React.FC<Partial<itemRenderCardTypes>> = props => {
+const CardProduct: React.FC<Partial<itemRenderCardTypes>> = props => {
   const onChangeRate = () => {};
   return (
     <AppView
@@ -19,11 +19,17 @@ const Card: React.FC<Partial<itemRenderCardTypes>> = props => {
         <AppText variant="caption_main" is_bold>
           {props.ttile}
         </AppText>
+
         <AppText variant="caption_main" style={GlobalStyle.mb_1}>
           {props.description}
         </AppText>
+
         <AppView
-          style={{flexDirection: 'row', alignItems: 'center', marginBottom: 8}}>
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginBottom: 8,
+          }}>
           <AppText variant="caption_main">میانگین نظرات</AppText>
           <StarRating
             rating={props.rate ? props.rate : 0}
@@ -31,6 +37,7 @@ const Card: React.FC<Partial<itemRenderCardTypes>> = props => {
             onChange={onChangeRate}
           />
         </AppView>
+
         <AppView style={{flexDirection: 'row', alignItems: 'center'}}>
           <AppText variant="caption_main">پسندیده شده</AppText>
           <AppView style={style.container_like}>
@@ -40,6 +47,7 @@ const Card: React.FC<Partial<itemRenderCardTypes>> = props => {
             </AppText>
           </AppView>
         </AppView>
+
         <ButtonOpacity
           styleButton={{marginTop: 10}}
           text="مشاهده جزییات"
@@ -54,7 +62,7 @@ const Card: React.FC<Partial<itemRenderCardTypes>> = props => {
 const style = StyleSheet.create({
   container: {
     borderRadius: 12,
-    width: 300,
+    width: 330,
     height: '100%',
     shadowColor: '#000',
     shadowOffset: {
@@ -85,4 +93,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default Card;
+export default CardProduct;

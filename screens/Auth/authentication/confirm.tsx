@@ -127,7 +127,7 @@ const Confirm = (props: NavigationProps): JSX.Element => {
             variant="contained"
             onPress={() => setCounter(60)}
             styleButton={{
-              backgroundColor: 'white',
+              backgroundColor: Color.light_white,
               borderColor: Color.yellow_main,
               borderWidth: 1,
             }}
@@ -150,7 +150,7 @@ const style = StyleSheet.create({
     width: 60,
     height: 50,
     textAlign: 'center',
-    borderColor: 'white',
+    borderColor: Color.light_white,
   },
   wrap: {
     flexDirection: 'row',

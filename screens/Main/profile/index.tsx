@@ -1,22 +1,23 @@
 import React from 'react';
 import AppView from '../../../common/AppView';
-import AppText from '../../../common/AppText';
-import {StyleSheet} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Main from './main';
+import Userinfo from './userinfo';
+const Slack = createNativeStackNavigator();
+
 const Profile: React.FC = () => {
   return (
-    <AppView style={style.container}>
-      <AppText text="Profile Page" />
+    <AppView style={{flex: 1}}>
+      <Slack.Navigator
+        screenOptions={{
+          headerShown: false,
+          animation: 'flip',
+        }}>
+        <Slack.Screen component={Main} name="main" />
+        <Slack.Screen component={Userinfo} name="userinfo" />
+      </Slack.Navigator>
     </AppView>
   );
 };
-
-const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default Profile;

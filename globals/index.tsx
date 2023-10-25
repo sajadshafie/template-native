@@ -1,4 +1,10 @@
-import {StyleSheet, ViewStyle, StyleProp, TextStyle} from 'react-native';
+import {
+  StyleSheet,
+  ViewStyle,
+  StyleProp,
+  TextStyle,
+  Animated,
+} from 'react-native';
 
 export default {
   combineStyleHandler: (
@@ -9,5 +15,15 @@ export default {
       ? StyleSheet.flatten([firstStyle, ...secondStyle])
       : StyleSheet.flatten([firstStyle, secondStyle]);
     return combinedStyle;
+  },
+  numberOnly: (value: string) => {
+    return value.replace(/\D/g, '');
+  },
+  AnimateRenderTime: (state: any, value: number, duration: number) => {
+    Animated.timing(state, {
+      toValue: value,
+      duration: duration,
+      useNativeDriver: true,
+    }).start();
   },
 };

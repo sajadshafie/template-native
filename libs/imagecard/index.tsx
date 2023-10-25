@@ -16,14 +16,14 @@ const ImageCard: React.FC<Partial<imageCardTypes>> = props => {
             variant="h5"
             is_bold
             style={[
-              {color: props.darkText ? Color.main_bg : 'white'},
+              {color: props.darkText ? Color.main_bg : Color.light_white},
               GlobalStyle.mb_1,
             ]}>
             {props.title}
           </AppText>
           <AppText
             variant="caption_main"
-            style={{color: props.darkText ? Color.main_bg : 'white'}}>
+            style={{color: props.darkText ? Color.main_bg : Color.light_white}}>
             {props.description}
           </AppText>
         </AppView>
@@ -50,7 +50,7 @@ const ImageCard: React.FC<Partial<imageCardTypes>> = props => {
         <AppView
           style={{
             ...style.box_icon,
-            borderColor: props.darkText ? Color.main_bg : 'white',
+            borderColor: props.darkText ? Color.main_bg : Color.light_white,
           }}>
           {props.icon}
         </AppView>

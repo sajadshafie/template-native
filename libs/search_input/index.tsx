@@ -4,7 +4,7 @@ import AppInput from '../../common/AppInput';
 import {Color} from '../../constant';
 import {StyleSheet} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {View} from 'react-native';
+import {View, StyleProp, ViewStyle} from 'react-native';
 
 type searchType = {
   placeholder: string;
@@ -12,6 +12,7 @@ type searchType = {
   onClear: () => void;
   onChange: (v: string) => void;
   value: string;
+  // style: StyleProp<ViewStyle>;
 };
 
 const InputSearch: React.FC<Partial<searchType>> = props => {

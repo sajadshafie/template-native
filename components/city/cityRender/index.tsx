@@ -24,6 +24,7 @@ const CityRender: React.FC<Partial<propsRender>> = props => {
         return (
           <AppView style={GlobalStyle.my_2} key={v.id}>
             <ButtonOpacity
+              variant="contained"
               onPress={() => props.onPress && props.onPress(v, i)}
               text={v.title}
               key={v.id}
@@ -44,7 +45,7 @@ const CityRender: React.FC<Partial<propsRender>> = props => {
 
 const style = StyleSheet.create({
   button_container: {
-    backgroundColor: 'white',
+    backgroundColor: Color.light_white,
   },
 });
 

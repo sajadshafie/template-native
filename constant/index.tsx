@@ -1,4 +1,5 @@
 export const Color = {
+  light_white: 'white',
   main_bg: '#231942',
   main_bg100: '#555161',
   text_color: '#22223b',
@@ -13,4 +14,8 @@ export const Color = {
   box_red: '#e63946',
   box_yellow: '#ffbe0b',
   transparent: 'transparent',
+  green: '#2a9d8f',
+  orange: '#e76f51',
+  lemon: '#fefae0',
+  purpel: '#cdb4db',
 };

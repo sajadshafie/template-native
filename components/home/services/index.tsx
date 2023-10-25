@@ -26,11 +26,11 @@ const Services: React.FC = () => {
               <MaterialCommunityIcons
                 name={v.iconName}
                 size={30}
-                color={'white'}
+                color={Color.light_white}
               />
               <AppText
                 variant="caption_main"
-                style={{textAlign: 'center', color: 'white'}}>
+                style={{textAlign: 'center', color: Color.light_white}}>
                 {v.label}
               </AppText>
             </AppView>
@@ -44,7 +44,7 @@ const Services: React.FC = () => {
 const style = StyleSheet.create({
   container_box: {
     position: 'relative',
-    backgroundColor: 'white',
+    backgroundColor: Color.light_white,
   },
   container_services: {
     display: 'flex',

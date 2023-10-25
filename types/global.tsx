@@ -24,3 +24,9 @@ export type imageCardTypes = {
   buttonVariant: 'outlined' | 'contained';
   darkText: boolean;
 };
+
+export type profileOptionTypes = {
+  title: string;
+  icon: React.ReactNode;
+  route?: string;
+};

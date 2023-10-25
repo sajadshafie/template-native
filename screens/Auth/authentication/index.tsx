@@ -4,7 +4,7 @@ import AppText from '../../../common/AppText';
 import {ButtonOpacity} from '../../../common/AppButton';
 import {StyleSheet} from 'react-native';
 import NavigationProps from '../../../types/navigation';
-import AppImage from '../../../common/AppImage';
+import globals from '../../../globals';
 import AppInput from '../../../common/AppInput';
 import AuthLayout from '../../../Layout/auth';
 const Authentication: React.FC<NavigationProps> = props => {
@@ -46,6 +46,7 @@ const Authentication: React.FC<NavigationProps> = props => {
           placeholder="شماره موبایل خود را وارد کنید"
           keyboardType={'numeric'}
           onChange={onForm}
+          value={globals.numberOnly(phone)}
         />
         {err && <AppText variant="error">{err}</AppText>}
       </AppView>

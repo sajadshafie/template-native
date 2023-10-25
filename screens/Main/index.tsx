@@ -45,7 +45,7 @@ const Main: React.FC = () => {
 
           return iconName;
         },
-        tabBarActiveTintColor: 'white',
+        tabBarActiveTintColor: Color.light_white,
         tabBarInactiveTintColor: 'gray',
       })}>
       {TabItems.map((v: tabType, i: number) => {
@@ -55,7 +55,6 @@ const Main: React.FC = () => {
           </React.Fragment>
         );
       })}
-      {/* <Tab.Screen name="profile" component={Profile} /> */}
     </Tab.Navigator>
   );
 };

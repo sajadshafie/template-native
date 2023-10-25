@@ -67,7 +67,12 @@ export const ButtonOpacity: React.FC<AppButton> = props => {
           variant={props.textVariant}
           is_bold={props.isBoldText}
           style={globals.combineStyleHandler(
-            {color: props.variant == 'contained' ? 'white' : Color.main_bg},
+            {
+              color:
+                props.variant == 'contained'
+                  ? Color.light_white
+                  : Color.main_bg,
+            },
             props.styleText,
           )}>
           {props.text}
@@ -98,7 +103,12 @@ export const ButtonPresable: React.FC<AppButton> = props => {
           variant={props.textVariant}
           is_bold={props.isBoldText}
           style={globals.combineStyleHandler(
-            {color: props.variant == 'contained' ? 'white' : Color.main_bg},
+            {
+              color:
+                props.variant == 'contained'
+                  ? Color.light_white
+                  : Color.main_bg,
+            },
             props.styleText,
           )}>
           {props.text}
@@ -124,7 +134,7 @@ const style = StyleSheet.create({
     borderWidth: 1.2,
   },
   text: {
-    color: 'white',
+    color: Color.light_white,
   },
   view_button: {
     display: 'flex',
